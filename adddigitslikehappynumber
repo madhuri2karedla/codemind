@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Sample
+{
+    public static void main(String args[])
+    {
+        int a;
+        Scanner sc=new Scanner(System.in);
+        a=sc.nextInt();
+        int sum=0;
+        int l=(int)Math.log10(a)+1;
+        while(l>1)
+        {
+        sum=0;
+        while(a>0)
+        {
+            int r=a%10;
+            sum+=r;
+            a/=10;
+        }
+         l=(int)Math.log10(sum)+1;
+        a=sum;
+        }
+        System.out.println(sum);
+        }
+    }
