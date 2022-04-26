@@ -1,0 +1,46 @@
+import java.util.Scanner;
+class Sample
+{
+    public static boolean palindrome(int n)
+    {
+        int temp=n;
+        int s=0;
+        while(n>0)
+        {
+            int r=n%10;
+            s=s*10+r;
+            n/=10;
+        }
+        if(temp==s)
+        return true;
+        else
+        return false;
+    }
+    public static int reverse(int n)
+    {
+        int s=0;
+        while(n>0)
+        {
+            int r=n%10;
+            s=s*10+r;
+            n/=10;
+        }
+        return s;
+    }
+    public static void main(String args[])
+    {
+        int n,sum=0;
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        int c=1;
+        while(c>0)
+        {
+            sum=n+reverse(n);
+            if(palindrome(sum))
+            c=-1;
+            n=sum;
+        }
+        System.out.println(sum);
+        
+    }
+}
